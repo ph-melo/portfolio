@@ -1,4 +1,4 @@
-<h1 align="center"> Portal Links</h1>
+<h1 align="center">paulomelo.com</h1>
 
 <p align="center">
   <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
@@ -14,7 +14,7 @@
 <br>
 
 <p align="center">
-  <img alt=" Img Preview Projeto" src="./img/preview_project.png" width="100%">
+  <img alt=" Img Preview Projeto" src="./img/preview.png" width="100%">
 </p>
 
 ## 🚀 Tecnologias
@@ -28,11 +28,11 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O Portal Links é um agregador de links para usar como cartão de visitas online.
+O paulomelo.com é uma aplicação web criada para apresentar meus principais projetos e compartilhar um pouco sobre minha trajetória profissional.
 
 ## 🔖 Layout
 
-Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/design/nm1Swzy1XTEE7bIIC5Quj6/Projeto-Portal-Links?node-id=10-620&m=dev&t=vGUrmVrhH3qo4vm3-1). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
+Você pode visualizar o layout do projeto através [DESSE LINK](https://figma.com). É necessário ter conta no [Figma](https://figma.com) para acessá-lo.
 
 ## :memo: Licença
 
