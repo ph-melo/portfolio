@@ -28,7 +28,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ## 💻 Projeto
 
-O paulomelo.com é uma aplicação web criada para apresentar meus principais projetos e compartilhar um pouco sobre minha trajetória profissional.
+O paulohenriquemelo.com é uma aplicação web criada para apresentar meus principais projetos e compartilhar um pouco sobre minha trajetória profissional.
 
 ## 🔖 Layout
 
