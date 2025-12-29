@@ -1,19 +1,24 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="">
+<html lang="pt-br">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,306;1,14..32,306&display=swap"
       rel="stylesheet"/>
-    <link rel="shortcut icon"type="image/x-icon"href="./assets/img.jpg">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img.jpg" />
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>paulohenriquemelo.com</title>
     <link rel="stylesheet" href="style.css" />
-    <div id="back-home"><a>paulohenriquemelo.com</a></div>
   </head>
   <body>
+    <!-- Botão de idioma e título no topo -->
+    <div id="back-home"><a>paulohenriquemelo.com</a></div>
+    <div id="language-switch" style="position: absolute; top: 10px; right: 10px;">
+      <button id="toggle-language">PT | EN</button>
+    </div>
+
     <div id="container">
       <div id="profile">
         <img src="./assets/avatar.png" />
@@ -24,10 +29,14 @@
         <span></span>
       </div>
       <ul>
-        <li><a href="aboutme.html">About Me</a></li>
-        <li><a href="curriculum.html">My Career</a></li>
-        <li><a href="myprojects.html">My Projects</a></li>
-        <li><a href="https://github.com/ph-melo/portfolio" target="_blank">Code Of This Website</a></li>
+        <li><a href="aboutme.html" data-i18n="about">Sobre Mim</a></li>
+        <li><a href="curriculum.html" data-i18n="curriculum">Minha Carreira</a></li>
+        <li><a href="myprojects.html" data-i18n="projects">Meus Projetos</a></li>
+        <li>
+          <a href="https://github.com/ph-melo/portfolio" target="_blank" data-i18n="sourcecode">
+            Código desse Website
+          </a>
+        </li>
       </ul>
       <div id="social-links">
         <a href="https://github.com/ph-melo" target="_blank">
@@ -36,9 +45,6 @@
         <a href="https://instagram.com/paulohenriquemelo" target="_blank">
           <ion-icon name="logo-instagram"></ion-icon>
         </a>
-        <!--<a href="#" target="_blank">
-          <ion-icon name="logo-youtube"></ion-icon>
-        </a>-->
         <a
           href="https://www.linkedin.com/in/paulo-henrique-melo-73b0a71b4/"
           target="_blank"
@@ -47,7 +53,8 @@
         </a>
       </div>
     </div>
-    <footer>By: Paulo Melo</footer>
+    <footer><span data-i18n="footer">By: Paulo Melo</span></footer>
+
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -56,7 +63,6 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script type="text/JavaScript"src="./script.js" defer></script>
+    <script type="text/javascript" src="./script.js" defer></script>
   </body>
 </html>
- 

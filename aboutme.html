@@ -1,18 +1,21 @@
 <!DOCTYPE html>
-<html lang="pt-br" class="">
+<html lang="pt-br">
   <head>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,306;1,14..32,306&display=swap"
       rel="stylesheet"/>
-    <link rel="shortcut icon"type="image/x-icon"href="./assets/img.jpg">
+    <link rel="shortcut icon" type="image/x-icon" href="./assets/img.jpg">
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Me | paulohenriquemelo</title>
     <link rel="stylesheet" href="style.css" />
-      <div id="back-home">
-      <a href="index.html"><- Back to Home</a>
+    <div id="back-home">
+      <a href="index.html"><- Voltar para Home</a>
+    </div>
+    <div id="language-switch" style="position: absolute; top: 10px; right: 10px;">
+      <button id="toggle-language">PT | EN</button>
     </div>
   </head>
   <body>
@@ -26,8 +29,10 @@
         <span></span>
       </div>
       <ul>
-        <h1>About Me</h1>
-        <li><p>I have extensive experience in backend and frontend development, working on large, complex projects. I am always seeking new knowledge and updates in the IT world. On the personal side, I am married and building a life together, enjoying adventures, music, and sports.</p></li>
+        <h1 id="aboutme-title">Sobre Mim</h1>
+        <li><p id="aboutme-knowledge">Conhecimento: Java, Python, JavaScript, HTML, CSS, C# , R, Shell, Linux, Apache, Weblogic, SQL, .Net, ABAP, Typescript. </p></li>
+        <li><p id="aboutme-experience">Tenho ampla experiência em desenvolvimento backend e frontend, atuando em projetos grandes e complexos. Estou sempre em busca de novos conhecimentos e atualizações no mundo da TI.</p></li>
+        <li><p id="aboutme-life">Sou casado e estou construindo uma vida ao lado da minha esposa, aproveitando aventuras, viagens, músicas e esportes.</p></li>
       </ul>
       <div id="social-links">
         <a href="https://github.com/ph-melo" target="_blank">
@@ -36,18 +41,12 @@
         <a href="https://instagram.com/paulohenriquemelo" target="_blank">
           <ion-icon name="logo-instagram"></ion-icon>
         </a>
-        <!--<a href="#" target="_blank">
-          <ion-icon name="logo-youtube"></ion-icon>
-        </a>-->
-        <a
-          href="https://www.linkedin.com/in/paulo-henrique-melo-73b0a71b4/"
-          target="_blank"
-        >
+        <a href="https://www.linkedin.com/in/paulo-henrique-melo-73b0a71b4/" target="_blank">
           <ion-icon name="logo-linkedin"></ion-icon>
         </a>
       </div>
     </div>
-    <footer>By: Paulo Melo</footer>
+    <footer><span data-i18n="footer">By: Paulo Melo</span></footer>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -56,6 +55,7 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="js/translate.js"></script>
     <script src="./script.js"></script>
   </body>
 </html>
