@@ -1,0 +1,37 @@
+<!--Pagina especifica para realizar testes em live server-->
+<!--This page is especific for tests-->
+<div class="hero">
+  <div class="avatar-container">
+    <svg id="avatar" viewBox="0 0 200 200" width="220">
+
+      <!-- Olhos -->
+      <circle cx="75" cy="85" r="15" fill="white"/>
+      <circle cx="125" cy="85" r="15" fill="white"/>
+
+      <!-- Pupilas -->
+      <circle class="pupil" cx="75" cy="85" r="7" fill="black"/>
+      <circle class="pupil" cx="125" cy="85" r="7" fill="black"/>
+
+    </svg>
+  </div>
+</div>
+
+<script>
+const pupils = document.querySelectorAll(".pupil");
+
+document.addEventListener("mousemove", (e) => {
+  pupils.forEach(pupil => {
+    const rect = pupil.getBoundingClientRect();
+    const centerX = rect.left + rect.width / 2;
+    const centerY = rect.top + rect.height / 2;
+
+    const angle = Math.atan2(e.clientY - centerY, e.clientX - centerX);
+
+    const moveX = Math.cos(angle) * 4;
+    const moveY = Math.sin(angle) * 4;
+
+    pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  });
+});
+</script>
+

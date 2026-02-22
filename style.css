@@ -8,7 +8,7 @@ body {
   /* background: color-image-repeat-position/size*/
   background: var(--bg-url) no-repeat top center/cover;
   /*mesma coisa escrita, porém de forma mais rapida*/
-  height: autovh;
+  min-height: 100vh;
 }
 * {
   margin: 0;
@@ -16,24 +16,26 @@ body {
   box-sizing: border-box;
 }
 
-:root {
+.light {
   --text-color: white;
-  --bg-url: url(./assets/bg-mobile.jpg);
+  --bg-url: url(./assets/bg-mobile.png);
   --stroke-color: rgba(255, 255, 255, 0.5);
-  --surface-color: rgba(255, 255, 255, 0.05);
+  --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(255, 255, 255, 0.2);
-  --switch-bg-url: url(./assets/moon-stars.svg);
+  --switch-bg-url: url(./assets/sun.png);
+  --pupil-color: rgb(12, 230, 211);
 }
 
-.light {
+:root {
   --text-color: black;
   --bg-url: url(./assets/bg-mobile-light.jpg);
   --stroke-color: rgba(0, 0, 0, 0.5);
   --surface-color: rgba(0, 0, 0, 0.05);
   --surface-color-hover: rgba(0, 0, 0, 0.02);
   --highlight-color: rgba(0, 0, 0, 0.1);
-  --switch-bg-url: url(./assets/sun.svg);
+  --switch-bg-url: url(./assets/moon.png);
+  --pupil-color: black;
 }
 
 body * {
@@ -61,10 +63,47 @@ body * {
   padding: 24px;
 }
 
-#profile img {
-  width: 112px;
+#profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.avatar-wrapper {
+  position: relative;
+  width: 112px;  /* tamanho real do avatar */
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+.eyes-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 112px;  /* tamanho real do avatar */
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+.eyes-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
 #profile p {
   font-weight: 500px;
   line-height: 24px;
@@ -80,6 +119,7 @@ body * {
   width: 32px;
   height: 32px;
   background: white var(--switch-bg-url) no-repeat center;
+  background-size: 20px;
   border: 0;
   border-radius: 50%;
 
@@ -224,6 +264,22 @@ ul li a:hover {
 
 #toggle-language:hover {
   background: var(--surface-color-hover);
+}
+
+.avatar-wrapper {
+  position: relative;
+  width: 112px; /* ajuste conforme seu layout */
+  margin: 0 auto;
+}
+
+.avatar-wrapper img {
+  width: 100%;
+  display: block;
+}
+
+.pupil {
+  fill: var(--pupil-color);
+  transition: transform 0.05s linear;
 }
 
 footer {

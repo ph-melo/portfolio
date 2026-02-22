@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
+    
     <!-- Botão de idioma e título no topo -->
     <div id="back-home"><a>paulohenriquemelo.com</a></div>
     <div id="language-switch" style="position: absolute; top: 10px; right: 10px;">
@@ -21,17 +22,26 @@
 
     <div id="container">
       <div id="profile">
-        <img src="./assets/avatar.png" />
-        <p>@paulohenriquemelo</p>
-      </div>
+        <div class="avatar-wrapper">
+          <img src="./assets/avatar_light.png" id="avatar-img" />
+
+          <svg class="eyes-overlay" viewBox="0 0 300 300">
+            <circle id="pupil-left" class="pupil" cx="130" cy="112" r="5.5" />
+            <circle id="pupil-right" class="pupil" cx="165" cy="112" r="5.5" />
+          </svg>
+        </div>
+
+  <p>@paulohenriquemelo</p>
+</div>
+      
       <div id="switch">
         <button></button>
         <span></span>
       </div>
       <ul>
-        <li><a href="aboutme.html" data-i18n="about">Sobre Mim</a></li>
-        <li><a href="curriculum.html" data-i18n="curriculum">Minha Carreira</a></li>
-        <li><a href="myprojects.html" data-i18n="projects">Meus Projetos</a></li>
+        <li><a href="aboutme.html" data-i18n="aboutMe">Sobre Mim</a></li>
+        <li><a href="curriculum.html" data-i18n="myCareer">Minha Carreira</a></li>
+        <li><a href="myprojects.html" data-i18n="myProjects">Meus Projetos</a></li>
         <li>
           <a href="https://github.com/ph-melo/portfolio" target="_blank" data-i18n="sourcecode">
             Código desse Website
@@ -54,7 +64,7 @@
       </div>
     </div>
     <footer><span data-i18n="footer">By: Paulo Melo</span></footer>
-
+    
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

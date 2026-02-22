@@ -12,16 +12,23 @@
     <title>Projects | paulohenriquemelo</title>
     <link rel="stylesheet" href="style.css" />
       <div id="back-home">
-      <a href="index.html"><- Voltar para Home</a>
+      <a href="index.html" data-i18n="backHome">← Voltar para Home</a>
     </div>
     <div id="language-switch" style="position: absolute; top: 10px; right: 10px;">
       <button id="toggle-language">PT | EN</button>
     </div>
   </head>
   <body>
-    <div id="container">
+        <div id="container">
       <div id="profile">
-        <img src="./assets/avatar.png" />
+        <div class="avatar-wrapper">
+          <img src="./assets/avatar_light.png" id="avatar-img" />
+
+          <svg class="eyes-overlay" viewBox="0 0 300 300">
+            <circle id="pupil-left" class="pupil" cx="130" cy="112" r="5.5" />
+            <circle id="pupil-right" class="pupil" cx="165" cy="112" r="5.5" />
+          </svg>
+        </div>
         <p>@paulohenriquemelo</p>
       </div>
       <div id="switch" onclick="toggleMode()">
@@ -30,23 +37,28 @@
       </div>
       <div id = "projects">
         <ul>  
-          <h1>Meus Projetos</h1>
+          <h1 data-i18n="myProjects">Meus Projetos</h1>
+          <p>To Do List - Java</p>
+          <li><p data-i18n="projectJava">Desenvolvi um gerenciador de tarefas em Java que surgiu de uma necessidade pessoal:
+organizar e lembrar das minhas próprias tarefas do dia a dia. Desenvolvido com Java e ficou tão legal que quero levar isso para um frontend, quem sabe.... em Flutter</p></li>
+          <img src="./assets/todolist.png" alt="Imagem do Projeto">
+          <li><a href="https://github.com/ph-melo/Gerenciador-de-Tarefas-em-Java" target="_blank" data-i18n="sourcecodeP">Veja o código aqui</a></li>
           <p>Proffy - Study Platform</p>
-          <li><p>Desenvolvida com HTML, CSS e JavaScript, esta aplicação web tem como objetivo ser uma plataforma de estudos. Professores e alunos podem se cadastrar para oferecer ou participar de aulas.</p></li>
+          <li><p data-i18n="projectProffy">Desenvolvida com HTML, CSS e JavaScript, esta aplicação web tem como objetivo ser uma plataforma de estudos. Professores e alunos podem se cadastrar para oferecer ou participar de aulas.</p></li>
           <img src="./assets/preview-proffy.png" alt="Imagem do Projeto">
-          <li><a href="https://github.com/ph-melo/proffy" target="_blank">Veja o código aqui</a></li>
+          <li><a href="https://github.com/ph-melo/proffy" target="_blank" data-i18n="sourcecodeP">Veja o código aqui</a></li>
           <p>Fake News Detector - Python</p>
-          <li><p>A aplicação foi desenvolvida para fins acadêmicos, com o objetivo de interagir com usuários de redes sociais que podem estar expostos a fake news. Com base em um modelo de dados, a aplicação permite que os usuários insiram um título de notícia e verifiquem sua autenticidade. A resposta é fornecida com uma precisão baseada em um modelo treinado utilizando técnicas de aprendizado de máquina.</p></li>
+          <li><p data-i18n="projectFakeNews">A aplicação foi desenvolvida para fins acadêmicos, com o objetivo de interagir com usuários de redes sociais que podem estar expostos a fake news. Com base em um modelo de dados, a aplicação permite que os usuários insiram um título de notícia e verifiquem sua autenticidade. A resposta é fornecida com uma precisão baseada em um modelo treinado utilizando técnicas de aprendizado de máquina.</p></li>
           <img src="./assets/preview_detector.png" alt="Imagem do projeto">
-          <li><a href="https://github.com/ph-melo/fake-news-detector" target="_blank">Veja o código aqui</a></li>
+          <li><a href="https://github.com/ph-melo/fake-news-detector" target="_blank" data-i18n="sourcecodeP">Veja o código aqui</a></li>
           <p>Portal Links - WEB</p>
-          <li><p>Um aplicativo projetado para criar um portal que reúne todos os seus links essenciais em um só lugar—seja de redes sociais, sites ou qualquer outra plataforma. O objetivo é facilitar ao máximo a navegação dos usuários e o acesso às principais plataformas de alguém, assim como o LinkTree. Desenvolvido com HTML, CSS e JavaScript.</p></li>
+          <li><p data-i18n="projectPortalLinks">Um aplicativo projetado para criar um portal que reúne todos os seus links essenciais em um só lugar—seja de redes sociais, sites ou qualquer outra plataforma. O objetivo é facilitar ao máximo a navegação dos usuários e o acesso às principais plataformas de alguém, assim como o LinkTree. Desenvolvido com HTML, CSS e JavaScript.</p></li>
           <img src="./assets/preview_portallinks.png" alt="Imagem do projeto">
-          <li><a href="https://github.com/ph-melo/portallinks" target="_blank">Veja o código aqui</a></li>
+          <li><a href="https://github.com/ph-melo/portallinks" target="_blank" data-i18n="sourcecodeP">Veja o código aqui</a></li>
           <p>Appointment - WEB / APP</p>
-          <li><p>Aplicação desenvolvida utilizando o framework Django com Python, HTML, CSS e JavaScript, integrada a um banco de dados SQLite. O objetivo foi criar uma interface gráfica para o gerenciamento de consultas médicas, oferecendo duas perspectivas principais: uma para os pacientes agendarem suas consultas e outra para os médicos visualizarem seus horários e atendimentos marcados.</p></li>
+          <li><p data-i18n="projectAppointment">Aplicação desenvolvida utilizando o framework Django com Python, HTML, CSS e JavaScript, integrada a um banco de dados SQLite. O objetivo foi criar uma interface gráfica para o gerenciamento de consultas médicas, oferecendo duas perspectivas principais: uma para os pacientes agendarem suas consultas e outra para os médicos visualizarem seus horários e atendimentos marcados.</p></li>
           <img src="./assets/preview-appointment.png" alt="Imagem do projeto">
-          <li><a href="https://github.com/ph-melo/Appointment" target="_blank">Veja o código aqui</a></li>
+          <li><a href="https://github.com/ph-melo/Appointment" target="_blank" data-i18n="sourcecodeP">Veja o código aqui</a></li>
         </ul>
       </div>
       <div id="social-links">

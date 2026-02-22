@@ -1,4 +1,8 @@
 //function toggleMode() {
+let basePosition = {
+  left: { x: 130, y: 112 },
+  right: { x: 165, y: 112 }
+};
   let light = localStorage.getItem('light') //ponto de amazenamento do navegador
   const Switch = document.getElementById('switch') //Declarando meu switch a um Objeto
   const img = document.querySelector("#profile img") //Pegando a tag da imagem
@@ -7,17 +11,40 @@
   const enableDarkmode = () => {
     document.body.classList.add('light')
     localStorage.setItem('light', 'active')
-    img.setAttribute("src", "./assets/avatar-light.png") //altera a imagem
+    img.setAttribute("src", "./assets/avatar_dark.png")
+      // nova posição no dark
+    basePosition = {
+      left: { x: 134, y: 78},
+      right: { x: 165, y: 78 }
+  };
+
+  updatePupilBase(); //altera a imagem
   }
  
   // Declarei o objeto caso nao tenha 'light' na classlist (OFF)
   const disableDarkmode = () =>{
     document.body.classList.remove('light')
     localStorage.setItem('light', null)
-    img.setAttribute("src", "./assets/avatar.png") //mantem a imagem
+    img.setAttribute("src", "./assets/avatar_light.png") //mantem a imagem
+      basePosition = {
+        left: { x: 130, y: 112 },
+        right: { x: 165, y: 112 }
+  };
+
+  updatePupilBase();
     
   }
   
+function updatePupilBase() {
+  const pupils = document.querySelectorAll(".pupil");
+
+  pupils[0].setAttribute("cx", basePosition.left.x);
+  pupils[0].setAttribute("cy", basePosition.left.y);
+
+  pupils[1].setAttribute("cx", basePosition.right.x);
+  pupils[1].setAttribute("cy", basePosition.right.y);
+}
+
   if(light === "active") enableDarkmode()
     
   Switch.addEventListener("click", () => {
@@ -28,68 +55,100 @@
 //tradução
 
 document.addEventListener("DOMContentLoaded", function () {
+
   const translations = {
     pt: {
-      aboutMe: "Sobre Mim",
+      backHome: "← Voltar para Home",
       myCareer: "Minha Carreira",
+      footer: "By: Paulo Melo",
+      aboutMe: "Sobre Mim",
       myProjects: "Meus Projetos",
-      sourceCode: "Código desse Website",
-      footer: "By: Paulo ",
-      experience: "Experiência",
-      skills: "Habilidades",
-      contact: "Contato",
-      aboutText: "Olá! Meu nome é Paulo Melo e sou um desenvolvedor fullstack apaixonado por tecnologia. Tenho experiência com diversas tecnologias e estou sempre em busca de novos desafios.",
-      experienceText: "Atualmente trabalho como desenvolvedor fullstack pleno na Vivo e estou buscando uma oportunidade no TI do Itaú como desenvolvedor sênior.",
-      skillsText: "Minhas principais habilidades incluem desenvolvimento web, banco de dados e arquiteturas modernas de software.",
-      contactText: "Sinta-se à vontade para entrar em contato comigo para discutirmos projetos e oportunidades!"
+      sourcecode: "Código desse Website",
+      aboutmeKnowledge: "Conhecimento: Java, Python, JavaScript, HTML, CSS, C# , R, Shell, Linux, Apache, Weblogic, SQL, .Net, ABAP, Typescript.",
+      aboutmeExperience: "Tenho ampla experiência em desenvolvimento backend e frontend, atuando em projetos grandes e complexos. Estou sempre em busca de novos conhecimentos e atualizações no mundo da TI.",
+      aboutmeLife: "Sou casado e estou construindo uma vida ao lado da minha esposa, aproveitando aventuras, viagens, músicas e esportes.",
+      projectJava: "Desenvolvi um gerenciador de tarefas em Java que surgiu de uma necessidade pessoal: organizar e lembrar das minhas próprias tarefas do dia a dia. Desenvolvido com Java e ficou tão legal que quero levar isso para um frontend, quem sabe.... em Flutter",
+      projectProffy: "Desenvolvida com HTML, CSS e JavaScript, esta aplicação web tem como objetivo ser uma plataforma de estudos. Professores e alunos podem se cadastrar para oferecer ou participar de aulas.",
+      projectFakeNews: "A aplicação foi desenvolvida para fins acadêmicos, com o objetivo de interagir com usuários de redes sociais que podem estar expostos a fake news. Com base em um modelo de dados, a aplicação permite que os usuários insiram um título de notícia e verifiquem sua autenticidade. A resposta é fornecida com uma precisão baseada em um modelo treinado utilizando técnicas de aprendizado de máquina.",
+      projectPortalLinks: "Um aplicativo projetado para criar um portal que reúne todos os seus links essenciais em um só lugar—seja de redes sociais, sites ou qualquer outra plataforma. O objetivo é facilitar ao máximo a navegação dos usuários e o acesso às principais plataformas de alguém, assim como o LinkTree. Desenvolvido com HTML, CSS e JavaScript.",
+      projectAppointment: "Aplicação desenvolvida utilizando o framework Django com Python, HTML, CSS e JavaScript, integrada a um banco de dados SQLite. O objetivo foi criar uma interface gráfica para o gerenciamento de consultas médicas, oferecendo duas perspectivas principais: uma para os pacientes agendarem suas consultas e outra para os médicos visualizarem seus horários e atendimentos marcados.",
+      sourcecodeP: "Veja o código aqui",
+      careerSeniorDataAnalytics: " - Analista Sênior de Dados | jul/2023 -> presente",
+      careerFullstackDev: " - Dev Fullstack | nov/2024 -> set/2025 ",
+      careerAnalystDev: " - Analista Desenvolvimento de Sistemas | jun/2023 -> nov/2024 ",
+      careerServiceDesk: " - Service Desk | fev/2020 -> jul/2021",
+      careerInternship: " - Estagiário Vivo BPO IT | fev/2022 -> jun/2022",
+      careerSAPAnalyst: " - SAP Analista de Sistemas | jun/2022 -> mai/2023",
+      intership: "Trabalhei como estagiário na Telefônica Brasil (VIVO), com foco em encontrar novas ferramentas tecnológicas para aprimorar processos. Desenvolvi automações utilizando Shell e realizei análises de dados para a equipe de contabilidade com Python. Além disso, fui um dos pioneiros na integração de ferramentas por meio de código em Python e VB, com SAP e Excel. Após apenas quatro meses tive a felicidade de ser efetivado. :)",
+      service: "Trabalhei como analista de service desk, sendo responsável por atender a fila de tickets relacionados à manutenção, resolução de erros e atualizações de servidores e estações de trabalho. Também fui encarregado de realizar visitas presenciais a clientes para avaliar seu ambiente de TI, incluindo computadores e salas de servidores. Meu trabalho envolvia monitoramento contínuo 24/7, gerenciamento de firewall, configuração de VPN e infraestrutura de rede.",
+      auditoria: "Atuei como analista de auditoria, realizando análises de segurança e conformidade em sistemas SAP. Fui responsável por identificar vulnerabilidades, implementar medidas de segurança e garantir a integridade dos dados. Trabalhei em estreita colaboração com equipes de desenvolvimento e operações para implementar melhorias contínuas na segurança dos sistemas.",
+      careerFullstackDevDetails: "Atualmente, estou atuando como desenvolvedor fullstack, onde sou responsável por projetar, desenvolver e manter aplicações web. Trabalho tanto no frontend quanto no backend, utilizando tecnologias como JavaScript, HTML, CSS, Python e frameworks como Django e React. Estou envolvido em todas as etapas do ciclo de desenvolvimento, desde a concepção até a implementação e manutenção das aplicações.",
+      careerSeniorDataAnalyticsDetails: "Atualmente, estou atuando como analista sênior de dados, onde sou responsável por coletar, analisar e interpretar grandes volumes de dados para fornecer insights valiosos para a tomada de decisões estratégicas. Utilizo ferramentas de análise de dados, como Python, SQL e plataformas de visualização, para identificar tendências, padrões e oportunidades de melhoria nos processos de negócios. Trabalho em estreita colaboração com equipes multidisciplinares para transformar dados em informações acionáveis que impulsionam o crescimento e a eficiência da empresa.",
+      careerSAPAnalystDetails: "Atuei como analista de sistemas SAP, onde fui responsável por implementar, configurar e manter os módulos SAP, garantindo a eficiência dos processos de negócios. Trabalhei em estreita colaboração com as equipes de negócios para entender suas necessidades e traduzir isso em soluções técnicas dentro do ambiente SAP. Realizei análises de requisitos, testes e suporte contínuo para garantir a estabilidade e o desempenho dos sistemas SAP.",
+      careerAnalystDevDetails: "Atuei como analista de desenvolvimento de sistemas, onde fui responsável por analisar, projetar e implementar soluções de software para atender às necessidades dos negócios. Trabalhei em estreita colaboração com as equipes de negócios para entender os requisitos e traduzi-los em especificações técnicas. Participei de todas as fases do ciclo de desenvolvimento, desde a concepção até a implementação e manutenção das aplicações, utilizando tecnologias como Java, Python e frameworks relacionados."
+
+
+    
+      
     },
     en: {
-      aboutMe: "About Me",
+      backHome: "← Back to Home",
       myCareer: "My Career",
-      myProjects: "My Projects",
-      sourceCode: "Source Code of this Website",
       footer: "By: Paulo Melo",
-      experience: "Experience",
-      skills: "Skills",
-      contact: "Contact",
-      aboutText: "Hello! My name is Paulo Melo and I am a fullstack developer passionate about technology. I have experience with various technologies and I am always looking for new challenges.",
-      experienceText: "I currently work as a fullstack developer at Vivo and I am looking for an opportunity at Itaú's IT department as a senior developer.",
-      skillsText: "My main skills include web development, databases, and modern software architectures.",
-      contactText: "Feel free to reach out to me to discuss projects and opportunities!"
+      aboutMe: "About Me",
+      myProjects: "My Projects",
+      sourcecode: "Source code of this Website",
+      aboutmeKnowledge: "Knowledge: Java, Python, JavaScript, HTML, CSS, C# , R, Shell, Linux, Apache, Weblogic, SQL, .Net, ABAP, Typescript.",
+      aboutmeExperience: "I have extensive experience in backend and frontend development, working on large and complex projects. I am always seeking new knowledge and updates in the world of IT.",
+      aboutmeLife: "I am married and building a life alongside my wife, enjoying adventures, travels, music, and sports.",
+      projectJava: "I developed a task manager in Java that arose from a personal need: to organize and remember my own daily tasks. Developed with Java and it turned out so cool that I want to take this to a frontend, who knows.... in Flutter",
+      projectProffy: "Developed with HTML, CSS, and JavaScript, this web application aims to be a study platform. Teachers and students can register to offer or participate in classes.",
+      projectFakeNews: "The application was developed for academic purposes, with the aim of interacting with social media users who may be exposed to fake news. Based on a data model, the application allows users to input a news title and check its authenticity. The response is provided with an accuracy based on a model trained using machine learning techniques.",
+      projectPortalLinks: "An application designed to create a portal that brings together all your essential links in one place—whether from social media, websites, or any other platform. The goal is to maximize user navigation and access to someone's main platforms, just like LinkTree. Developed with HTML, CSS, and JavaScript.",
+      projectAppointment: "Application developed using the Django framework with Python, HTML, CSS and JavaScript, integrated with an SQLite database. The objective was to create a graphical interface for managing medical appointments, offering two main perspectives: one for patients to schedule their appointments and another for doctors to view their schedules and scheduled appointments.",
+      sourcecodeP: "See the code here",
+      careerSeniorDataAnalytics: " - Senior Data Analyst | Jul/2023 -> Present",
+      careerFullstackDev: " - Fullstack Dev | Nov/2024 -> Sep/2025 ",
+      careerAnalystDev: " - Systems Development Analyst | Jun/2023 -> Nov/2024 ",
+      careerServiceDesk: " - Service Desk | Feb/2020 -> Jul/2021",
+      careerInternship: " - Vivo BPO IT Intern | Feb/2022 -> Jun/2022",
+      careerSAPAnalyst: " - SAP Systems Analyst | Jun/2022 -> May/2023",
+      intership: "I worked as an intern at Telefônica Brasil (VIVO), focusing on finding new technological tools to improve processes. I developed automations using Shell and performed data analysis for the accounting team with Python. Additionally, I was one of the pioneers in integrating tools through code in Python and VB, with SAP and Excel. After just four months, I had the happiness of being hired. :)",
+      service: "I worked as a service desk analyst, being responsible for attending to the ticket queue related to maintenance, error resolution, and updates of servers and workstations. I was also in charge of making on-site visits to clients to assess their IT environment, including computers and server rooms. My work involved continuous 24/7 monitoring, firewall management, VPN configuration, and network infrastructure.",
+      auditoria: "I worked as an audit analyst, performing security and compliance analyses on SAP systems. I was responsible for identifying vulnerabilities, implementing security measures, and ensuring data integrity. I worked closely with development and operations teams to implement continuous improvements in system security.",
+      careerFullstackDevDetails: "Currently, I am working as a fullstack developer, where I am responsible for designing, developing, and maintaining web applications. I work on both the frontend and backend, using technologies such as JavaScript, HTML, CSS, Python, and frameworks like Django and React. I am involved in all stages of the development cycle, from conception to implementation and maintenance of applications.",
+      careerSeniorDataAnalyticsDetails: "Currently, I am working as a senior data analyst, where I am responsible for collecting, analyzing, and interpreting large volumes of data to provide valuable insights for strategic decision-making. I use data analysis tools such as Python, SQL, and visualization platforms to identify trends, patterns, and opportunities for improvement in business processes. I work closely with multidisciplinary teams to transform data into actionable information that drives company growth and efficiency.",
+      careerAnalystDevDetails: "Currently, I am working as a systems development analyst, where I am responsible for analyzing, designing and implementing software solutions to meet business needs. I work closely with business teams to understand requirements and translate them into technical specifications. I participate in all stages of the development cycle, from conception to implementation and maintenance of applications, using technologies such as Java, Python and related frameworks.",
+      careerSAPAnalystDetails: "I worked as a SAP systems analyst, where I was responsible for implementing, configuring, and maintaining SAP modules, ensuring the efficiency of business processes. I worked closely with business teams to understand their needs and translate that into technical solutions within the SAP environment. I performed requirements analysis, testing, and ongoing support to ensure the stability and performance of SAP systems.",
     }
   };
 
   const toggleLangBtn = document.getElementById("toggle-language");
-  let currentLang = localStorage.getItem("language") || "pt";
+
+  // 🔥 Detecta idioma automaticamente
+  function detectLanguage() {
+    const savedLang = localStorage.getItem("language");
+    if (savedLang) return savedLang;
+
+    const browserLang = navigator.language || navigator.userLanguage;
+
+    if (browserLang.startsWith("pt")) {
+      return "pt";
+    } else {
+      return "en";
+    }
+  }
+
+  let currentLang = detectLanguage();
 
   function updateTexts(lang) {
-    document.querySelector("ul li:nth-child(1) a").textContent = translations[lang].aboutMe;
-    document.querySelector("ul li:nth-child(2) a").textContent = translations[lang].myCareer;
-    document.querySelector("ul li:nth-child(3) a").textContent = translations[lang].myProjects;
-    document.querySelector("ul li:nth-child(4) a").textContent = translations[lang].sourceCode;
-    document.querySelector("footer").textContent = translations[lang].footer;
+    document.querySelectorAll("[data-i18n]").forEach(element => {
+      const key = element.getAttribute("data-i18n");
+      if (translations[lang][key]) {
+        element.textContent = translations[lang][key];
+      }
+    });
 
-    const experienceTitle = document.getElementById("experience-title");
-    if (experienceTitle) experienceTitle.textContent = translations[lang].experience;
-    
-    const skillsTitle = document.getElementById("skills-title");
-    if (skillsTitle) skillsTitle.textContent = translations[lang].skills;
-
-    const contactTitle = document.getElementById("contact-title");
-    if (contactTitle) contactTitle.textContent = translations[lang].contact;
-
-    const aboutText = document.getElementById("about-text");
-    if (aboutText) aboutText.textContent = translations[lang].aboutText;
-    
-    const experienceText = document.getElementById("experience-text");
-    if (experienceText) experienceText.textContent = translations[lang].experienceText;
-    
-    const skillsText = document.getElementById("skills-text");
-    if (skillsText) skillsText.textContent = translations[lang].skillsText;
-    
-    const contactText = document.getElementById("contact-text");
-    if (contactText) contactText.textContent = translations[lang].contactText;
-    
     toggleLangBtn.textContent = lang === "pt" ? "PT | EN" : "EN | PT";
   }
 
@@ -102,6 +161,30 @@ document.addEventListener("DOMContentLoaded", function () {
   updateTexts(currentLang);
 });
 
+// Avatar Follow Mouse
+document.addEventListener("mousemove", function (e) {
+  const pupils = document.querySelectorAll(".pupil");
+  const avatar = document.querySelector(".avatar-wrapper");
 
+  const rect = avatar.getBoundingClientRect();
+  const avatarCenterX = rect.left + rect.width / 2;
+  const avatarCenterY = rect.top + rect.height / 2;
 
+  const mouseX = e.clientX;
+  const mouseY = e.clientY;
+
+  const deltaX = mouseX - avatarCenterX;
+  const deltaY = mouseY - avatarCenterY;
+
+  const angle = Math.atan2(deltaY, deltaX);
+
+  const maxMove = 6; // limite da pupila
+
+  const moveX = Math.cos(angle) * maxMove;
+  const moveY = Math.sin(angle) * maxMove;
+
+  pupils.forEach(pupil => {
+    pupil.style.transform = `translate(${moveX}px, ${moveY}px)`;
+  });
+});
 

@@ -12,7 +12,7 @@
     <title>Me | paulohenriquemelo</title>
     <link rel="stylesheet" href="style.css" />
     <div id="back-home">
-      <a href="index.html"><- Voltar para Home</a>
+      <a href="index.html" data-i18n="backHome">← Voltar para Home</a>
     </div>
     <div id="language-switch" style="position: absolute; top: 10px; right: 10px;">
       <button id="toggle-language">PT | EN</button>
@@ -21,7 +21,14 @@
   <body>
     <div id="container">
       <div id="profile">
-        <img src="./assets/avatar.png" />
+        <div class="avatar-wrapper">
+          <img src="./assets/avatar_light.png" id="avatar-img" />
+
+          <svg class="eyes-overlay" viewBox="0 0 300 300">
+            <circle id="pupil-left" class="pupil" cx="130" cy="112" r="5.5" />
+            <circle id="pupil-right" class="pupil" cx="165" cy="112" r="5.5" />
+          </svg>
+        </div>
         <p>@paulohenriquemelo</p>
       </div>
       <div id="switch" onclick="toggleMode()">
@@ -29,10 +36,10 @@
         <span></span>
       </div>
       <ul>
-        <h1 id="aboutme-title">Sobre Mim</h1>
-        <li><p id="aboutme-knowledge">Conhecimento: Java, Python, JavaScript, HTML, CSS, C# , R, Shell, Linux, Apache, Weblogic, SQL, .Net, ABAP, Typescript. </p></li>
-        <li><p id="aboutme-experience">Tenho ampla experiência em desenvolvimento backend e frontend, atuando em projetos grandes e complexos. Estou sempre em busca de novos conhecimentos e atualizações no mundo da TI.</p></li>
-        <li><p id="aboutme-life">Sou casado e estou construindo uma vida ao lado da minha esposa, aproveitando aventuras, viagens, músicas e esportes.</p></li>
+        <h1 data-i18n="aboutMe">Sobre Mim</h1>
+        <li><p data-i18n="aboutmeKnowledge">Conhecimento: Java, Python, JavaScript, HTML, CSS, C# , R, Shell, Linux, Apache, Weblogic, SQL, .Net, ABAP, Typescript. </p></li>
+        <li><p data-i18n="aboutmeExperience">Tenho ampla experiência em desenvolvimento backend e frontend, atuando em projetos grandes e complexos. Estou sempre em busca de novos conhecimentos e atualizações no mundo da TI.</p></li>
+        <li><p data-i18n="aboutmeLife">Sou casado e estou construindo uma vida ao lado da minha esposa, aproveitando aventuras, viagens, músicas e esportes.</p></li>
       </ul>
       <div id="social-links">
         <a href="https://github.com/ph-melo" target="_blank">

@@ -12,7 +12,7 @@
     <title>Career | paulohenriquemelo</title>
     <link rel="stylesheet" href="style.css" />
     <div id="back-home">
-      <a href="index.html"><- Voltar para Home</a>
+      <a href="index.html"data-i18n="backHome"><- Voltar para Home</a>
     </div>
     <div id="language-switch" style="position: absolute; top: 10px; right: 10px;">
       <button id="toggle-language">PT | EN</button>
@@ -20,9 +20,15 @@
   </head>
   <body>
     
-    <div id="container">
+        <div id="container">
       <div id="profile">
-        <img src="./assets/avatar.png" />
+        <div class="avatar-wrapper">
+          <img src="./assets/avatar_light.png" id="avatar-img" />
+          <svg class="eyes-overlay" viewBox="0 0 300 300">
+            <circle id="pupil-left" class="pupil" cx="130" cy="112" r="5.5" />
+            <circle id="pupil-right" class="pupil" cx="165" cy="112" r="5.5" />
+          </svg>
+        </div>
         <p>@paulohenriquemelo</p>
       </div>
       <div id="switch" onclick="toggleMode()">
@@ -30,23 +36,23 @@
         <span></span>
       </div>
       <ul>
-        <h1>Minha Carreira</h1>
+        <h1 data-i18n="myCareer">Minha Carreira</h1>
          <ul>
-         </h7> - Auditor Senior Data Analytics | set/2025 -> atual</h7>
-         <li><p>Convidado a pedido da liderança sênior da área, com foco em Data Analytics aplicado à Auditoria, apoiando a Diretoria na tomada de decisão por meio de dados, indicadores e automação de análises.
+         <p7 data-i18n="careerSeniorDataAnalytics"> - Auditor Senior Data Analytics | set/2025 -> atual</p7>
+         <li><p data-i18n="auditoria">Convidado a pedido da liderança sênior da área, com foco em Data Analytics aplicado à Auditoria, apoiando a Diretoria na tomada de decisão por meio de dados, indicadores e automação de análises.
 
 Responsável por desenvolver, estruturar e automatizar KPIs e análises avançadas, utilizando ferramentas analíticas e linguagens de programação para transformar grandes volumes de dados em insights relevantes para os processos de auditoria, mitigação de riscos e melhoria contínua dos controles internos.
 </p></li> 
-         </h6> - Dev Fullstack | nov/2024 -> set/2025 </h6>
-          <li><p>Atuei como Desenvolvedor Fullstack na Telefônica Brasil (Vivo), com o objetivo de identificar melhorias nos processos e fornecer insights técnicos, como automação, desenvolvimento de sistemas. Utilizo tecnologias como Java, Python, JavaScript, HTML, CSS, Linux, Shell e SQL.</p></li>
-          </h5> - Analista Desenvolvimento de Sistemas | jun/2023 -> nov/2024 </h5>
-          <li><p>Desenvolvedor na Telefônica Brasil (VIVO), convidado pelo diretoria de contabilidade. Meu foco foi atender projetos prioritários, desenvolvendo, implementando e mantendo automações para KPIs e softwares. Trabalhei diretamente com tecnologias como Python, Java, C# e JavaScript. Além disso, fomos pioneiros na integração de metodologias ágeis dentro da diretoria.</p></li>
-          </h4> - SAP Analista de Sistemas | jun/2022 -> mai/2023</h4>
-          <li><p>Construí uma carreira de sucesso como analista de sistemas SAP, sendo oferecido um cargo em tempo integral e convidado a integrar a equipe para dar suporte a módulos-chave do SAP, como WF, FI e SD. Além disso, desenvolvi melhorias contínuas para automatizar processos lentos e manuais, utilizando Python e ABAP, complementados por integração XML com C#.</p></li>
-          </h3> - Estagiário Vivo BPO IT | fev/2022 -> jun/2022</h3>
-          <li><p>Trabalhei como estagiário na Telefônica Brasil (VIVO), com foco em encontrar novas ferramentas tecnológicas para aprimorar processos. Desenvolvi automações utilizando Shell e realizei análises de dados para a equipe de contabilidade com Python. Além disso, fui um dos pioneiros na integração de ferramentas por meio de código em Python e VB, com SAP e Excel. Após apenas quatro meses tive a felicidade de ser efetivado. :)</p></li>
-          </h2> - Service Desk | fev/2020 -> jul/2021</h2>
-          <li><p>Trabalhei como analista de service desk, sendo responsável por atender a fila de tickets relacionados à manutenção, resolução de erros e atualizações de servidores e estações de trabalho. Também fui encarregado de realizar visitas presenciais a clientes para avaliar seu ambiente de TI, incluindo computadores e salas de servidores. Meu trabalho envolvia monitoramento contínuo 24/7, gerenciamento de firewall, configuração de VPN e infraestrutura de rede.</p></li>
+         <p6 data-i18n="careerFullstackDev"> - Dev Fullstack | nov/2024 -> set/2025 </p6>
+          <li><p data-i18n="careerFullstackDevDetails">Atuei como Desenvolvedor Fullstack na Telefônica Brasil (Vivo), com o objetivo de identificar melhorias nos processos e fornecer insights técnicos, como automação, desenvolvimento de sistemas. Utilizo tecnologias como Java, Python, JavaScript, HTML, CSS, Linux, Shell e SQL.</p></li>
+          <p5 data-i18n="careerAnalystDev"> - Analista Desenvolvimento de Sistemas | jun/2023 -> nov/2024 </p5>
+          <li><p data-i18n="careerAnalystDevDetails">Desenvolvedor na Telefônica Brasil (VIVO), convidado pelo diretoria de contabilidade. Meu foco foi atender projetos prioritários, desenvolvendo, implementando e mantendo automações para KPIs e softwares. Trabalhei diretamente com tecnologias como Python, Java, C# e JavaScript. Além disso, fomos pioneiros na integração de metodologias ágeis dentro da diretoria.</p></li>
+          <p4 data-i18n="careerSAPAnalyst"> - SAP Analista de Sistemas | jun/2022 -> mai/2023</p4>
+          <li><p data-i18n="careerSAPAnalystDetails">Construí uma carreira de sucesso como analista de sistemas SAP, sendo oferecido um cargo em tempo integral e convidado a integrar a equipe para dar suporte a módulos-chave do SAP, como WF, FI e SD. Além disso, desenvolvi melhorias contínuas para automatizar processos lentos e manuais, utilizando Python e ABAP, complementados por integração XML com C#.</p></li>
+          <p3 data-i18n="careerInternship"> - Estagiário Vivo BPO IT | fev/2022 -> jun/2022</p3>
+          <li><p data-i18n="intership">Trabalhei como estagiário na Telefônica Brasil (VIVO), com foco em encontrar novas ferramentas tecnológicas para aprimorar processos. Desenvolvi automações utilizando Shell e realizei análises de dados para a equipe de contabilidade com Python. Além disso, fui um dos pioneiros na integração de ferramentas por meio de código em Python e VB, com SAP e Excel. Após apenas quatro meses tive a felicidade de ser efetivado. :)</p></li>
+          <p2 data-i18n="careerServiceDesk"> - Service Desk | fev/2020 -> jul/2021</p2>
+          <li><p data-i18n="service">Trabalhei como analista de service desk, sendo responsável por atender a fila de tickets relacionados à manutenção, resolução de erros e atualizações de servidores e estações de trabalho. Também fui encarregado de realizar visitas presenciais a clientes para avaliar seu ambiente de TI, incluindo computadores e salas de servidores. Meu trabalho envolvia monitoramento contínuo 24/7, gerenciamento de firewall, configuração de VPN e infraestrutura de rede.</p></li>
       </ul>
       <div id="social-links">
         <a href="https://github.com/ph-melo" target="_blank">
