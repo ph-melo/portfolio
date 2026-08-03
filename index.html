@@ -32,7 +32,7 @@
     background: rgba(18, 19, 20, 0.92);
   }
   *{margin:0;padding:0;box-sizing:border-box;}
-  html{scroll-behavior:smooth;
+  html{scroll-behavior:smooth;}
   body{
     background:var(--bg);
     color:var(--ink);
@@ -78,6 +78,21 @@
     line-height:1;
   }
   #theme-toggle:hover{color:var(--ink);border-color:var(--muted);}
+  #lang-toggle{
+    font-family:'IBM Plex Mono',monospace;
+    font-size:12px;
+    color:var(--muted);
+    background:transparent;
+    border:1px solid var(--border);
+    border-radius:var(--radius);
+    padding:6px 10px;
+    cursor:pointer;
+    line-height:1;
+  }
+  #lang-toggle:hover{border-color:var(--muted);}
+  #lang-toggle .lang-sep{color:var(--border);margin:0 4px;}
+  #lang-toggle .lang-option{color:var(--muted);}
+  #lang-toggle .lang-option.active{color:var(--ink);font-weight:500;}
   @media (max-width:640px){ nav ul{display:none;} }
 
   /* HERO */
@@ -173,34 +188,37 @@
   <div class="wrap">
     <div class="brand mono">paulohenriquemelo.com</div>
     <ul>
-      <li><a href="#about">Sobre</a></li>
-      <li><a href="#experience">Experiência</a></li>
-      <li><a href="#projects">Projetos</a></li>
-      <li><a href="#skills">Competências</a></li>
+      <li><a href="#about" data-i18n="nav-about">Sobre</a></li>
+      <li><a href="#experience" data-i18n="nav-experience">Experiência</a></li>
+      <li><a href="#projects" data-i18n="nav-projects">Projetos</a></li>
+      <li><a href="#skills" data-i18n="nav-skills">Competências</a></li>
     </ul>
     <div class="nav-right">
+      <button id="lang-toggle" type="button" aria-label="Switch language / Alternar idioma">
+        <span class="lang-option active" data-lang="pt">PT</span><span class="lang-sep">|</span><span class="lang-option" data-lang="en">EN</span>
+      </button>
       <button id="theme-toggle" type="button" aria-label="Alternar tema claro/escuro">⚪/⚫</button>
-      <a class="cta" href="#contact">Contato</a>
+      <a class="cta" href="#contact" data-i18n="nav-contact-btn">Contato</a>
     </div>
   </div>
 </nav>
 
 <header class="hero">
   <div class="wrap">
-    <div class="eyebrow mono"><span class="dot"></span>Software Engineer • Java • Spring Boot</div>
+    <div class="eyebrow mono"><span class="dot"></span><span data-i18n="hero-eyebrow">Software Engineer • Java • Spring Boot</span></div>
     <h1>Paulo Henrique Melo</h1>
-    <p class="role">Desenvolvedor Fullstack Sênior especializado em Java &amp; Spring Boot, construindo sistemas de integração, automação e auditoria contínua para ambientes corporativos de grande porte.</p>
+    <p class="role" data-i18n="hero-role">Desenvolvedor Fullstack Sênior especializado em Java &amp; Spring Boot, construindo sistemas de integração, automação e auditoria contínua para ambientes corporativos de grande porte.</p>
 
     <div class="hero-actions">
-      <a class="btn btn-primary" href="#contact">Falar comigo</a>
-      <a class="btn btn-secondary" href="assets/paulo-henrique-melo-curriculo.pdf" target="_blank" download="paulo-henrique-melo-curriculo.pdf">Ver currículo (PDF)</a>
+      <a class="btn btn-primary" href="#contact" data-i18n="hero-btn-talk">Falar comigo</a>
+      <a class="btn btn-secondary" href="assets/paulo-henrique-melo-curriculo.pdf" target="_blank" download="paulo-henrique-melo-curriculo.pdf" data-i18n="hero-btn-cv">Ver currículo (PDF)</a>
     </div>
 
     <div class="hero-stats mono">
-      <div class="stat"><b>6+ anos</b><span>de experiência em TI</span></div>
-      <div class="stat"><b>4 anos</b><span>na mesma empresa (Vivo)</span></div>
-      <div class="stat"><b>Java · Kafka · K8s</b><span>stack principal</span></div>
-      <div class="stat"><b>AWS · Azure</b><span>cloud</span></div>
+      <div class="stat"><b data-i18n="stat1-b">6+ anos</b><span data-i18n="stat1-s">de experiência em TI</span></div>
+      <div class="stat"><b data-i18n="stat2-b">4 anos</b><span data-i18n="stat2-s">na mesma empresa (Vivo)</span></div>
+      <div class="stat"><b>Java · Kafka · K8s</b><span data-i18n="stat3-s">stack principal</span></div>
+      <div class="stat"><b>AWS · Azure</b><span data-i18n="stat4-s">cloud</span></div>
     </div>
   </div>
 </header>
@@ -208,20 +226,20 @@
 <section id="about">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-label mono">01 — Sobre</div>
-      <div class="section-title">Perfil</div>
+      <div class="section-label mono" data-i18n="about-label">01 — Sobre</div>
+      <div class="section-title" data-i18n="about-title">Perfil</div>
     </div>
-    <p>Desenvolvedor Fullstack Sênior com experiência na construção de aplicações corporativas de alta disponibilidade, APIs REST, microsserviços e integrações entre sistemas.</p>
-    <p>Atuo em projetos de automação de processos, auditoria contínua e análise de grandes volumes de dados, sempre priorizando arquitetura sólida, qualidade de código e observabilidade sobre soluções pontuais.</p>
-    <p>Stack principal: Java, Spring Boot, PostgreSQL, Oracle, Kafka, Docker, Kubernetes, AWS e Azure — com prática recorrente em CI/CD via GitHub Actions e Azure DevOps, e infraestrutura como código com Terraform.</p>
+    <p data-i18n="about-p1">Desenvolvedor Fullstack Sênior com experiência na construção de aplicações corporativas de alta disponibilidade, APIs REST, microsserviços e integrações entre sistemas.</p>
+    <p data-i18n="about-p2">Atuo em projetos de automação de processos, auditoria contínua e análise de grandes volumes de dados, sempre priorizando arquitetura sólida, qualidade de código e observabilidade sobre soluções pontuais.</p>
+    <p data-i18n="about-p3">Stack principal: Java, Spring Boot, PostgreSQL, Oracle, Kafka, Docker, Kubernetes, AWS e Azure — com prática recorrente em CI/CD via GitHub Actions e Azure DevOps, e infraestrutura como código com Terraform.</p>
   </div>
 </section>
 
 <section id="experience">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-label mono">02 — Experiência</div>
-      <div class="section-title">Trajetória profissional</div>
+      <div class="section-label mono" data-i18n="exp-label">02 — Experiência</div>
+      <div class="section-title" data-i18n="exp-title">Trajetória profissional</div>
     </div>
 
     <div class="job">
@@ -230,12 +248,12 @@
         <div class="period mono">2025 — Atual</div>
       </div>
       <div class="job-body">
-        <div class="title">Desenvolvedor Sênior — Auditoria Contínua</div>
+        <div class="title" data-i18n="job1-title">Desenvolvedor Sênior — Auditoria Contínua</div>
         <ul>
-          <li>Desenvolvimento de soluções para suportar auditorias corporativas via automação de processos e integração de sistemas.</li>
-          <li>Construção e manutenção de APIs REST e aplicações Java para automação de auditorias.</li>
-          <li>Processamento e análise de grandes volumes de dados com Java e Python.</li>
-          <li>Integração entre aplicações usando Kafka e participação na definição de soluções técnicas para demandas estratégicas.</li>
+          <li data-i18n="job1-li1">Desenvolvimento de soluções para suportar auditorias corporativas via automação de processos e integração de sistemas.</li>
+          <li data-i18n="job1-li2">Construção e manutenção de APIs REST e aplicações Java para automação de auditorias.</li>
+          <li data-i18n="job1-li3">Processamento e análise de grandes volumes de dados com Java e Python.</li>
+          <li data-i18n="job1-li4">Integração entre aplicações usando Kafka e participação na definição de soluções técnicas para demandas estratégicas.</li>
         </ul>
       </div>
     </div>
@@ -246,11 +264,11 @@
         <div class="period mono">nov/2024 — set/2025</div>
       </div>
       <div class="job-body">
-        <div class="title">Desenvolvedor de Sistemas Pleno</div>
+        <div class="title" data-i18n="job2-title">Desenvolvedor de Sistemas Pleno</div>
         <ul>
-          <li>Sustentação e evolução de aplicações corporativas usadas por múltiplas áreas de negócio.</li>
-          <li>Desenvolvimento de microsserviços e APIs REST, com atuação direta em ambientes críticos de produção.</li>
-          <li>Participação em projetos de alta complexidade e integração entre sistemas corporativos.</li>
+          <li data-i18n="job2-li1">Sustentação e evolução de aplicações corporativas usadas por múltiplas áreas de negócio.</li>
+          <li data-i18n="job2-li2">Desenvolvimento de microsserviços e APIs REST, com atuação direta em ambientes críticos de produção.</li>
+          <li data-i18n="job2-li3">Participação em projetos de alta complexidade e integração entre sistemas corporativos.</li>
         </ul>
       </div>
     </div>
@@ -261,11 +279,11 @@
         <div class="period mono">jun/2023 — nov/2024</div>
       </div>
       <div class="job-body">
-        <div class="title">Analista de Desenvolvimento de Sistemas Pleno</div>
+        <div class="title" data-i18n="job3-title">Analista de Desenvolvimento de Sistemas Pleno</div>
         <ul>
-          <li>Desenvolvimento, implementação e manutenção de automações de KPIs para a diretoria de contabilidade.</li>
-          <li>Trabalho direto com Python, Java, C# e JavaScript.</li>
-          <li>Participação na introdução de metodologias ágeis dentro da diretoria.</li>
+          <li data-i18n="job3-li1">Desenvolvimento, implementação e manutenção de automações de KPIs para a diretoria de contabilidade.</li>
+          <li data-i18n="job3-li2">Trabalho direto com Python, Java, C# e JavaScript.</li>
+          <li data-i18n="job3-li3">Participação na introdução de metodologias ágeis dentro da diretoria.</li>
         </ul>
       </div>
     </div>
@@ -276,10 +294,10 @@
         <div class="period mono">jun/2022 — mai/2023</div>
       </div>
       <div class="job-body">
-        <div class="title">Analista de Sistemas SAP Pleno</div>
+        <div class="title" data-i18n="job4-title">Analista de Sistemas SAP Pleno</div>
         <ul>
-          <li>Suporte a módulos SAP (WF, FI, SD) em tempo integral.</li>
-          <li>Automação de processos manuais usando Python e ABAP, com integração XML via C#.</li>
+          <li data-i18n="job4-li1">Suporte a módulos SAP (WF, FI, SD) em tempo integral.</li>
+          <li data-i18n="job4-li2">Automação de processos manuais usando Python e ABAP, com integração XML via C#.</li>
         </ul>
       </div>
     </div>
@@ -290,10 +308,10 @@
         <div class="period mono">fev/2020 — jun/2022</div>
       </div>
       <div class="job-body">
-        <div class="title">Estágio TI</div>
+        <div class="title" data-i18n="job5-title">Estágio TI</div>
         <ul>
-          <li>Automações com Shell e Python para a equipe de contabilidade; integração entre SAP e Excel.</li>
-          <li>Suporte técnico, monitoramento de infraestrutura e gestão de firewall/VPN.</li>
+          <li data-i18n="job5-li1">Automações com Shell e Python para a equipe de contabilidade; integração entre SAP e Excel.</li>
+          <li data-i18n="job5-li2">Suporte técnico, monitoramento de infraestrutura e gestão de firewall/VPN.</li>
         </ul>
       </div>
     </div>
@@ -303,9 +321,9 @@
 <section id="projects">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-label mono">03 — Projetos</div>
-      <div class="section-title">Projetos em destaque</div>
-      <p class="lede">
+      <div class="section-label mono" data-i18n="projects-label">03 — Projetos</div>
+      <div class="section-title" data-i18n="projects-title">Projetos em destaque</div>
+      <p class="lede" data-i18n-html="projects-lede">
   Confira alguns dos principais projetos e casos reais em que atuei. 
   Para visualizar mais projetos desenvolvidos, <a href="https://github.com/ph-melo?tab=repositories" target="_blank" rel="noopener noreferrer">clique aqui</a>.
 </p>
@@ -314,13 +332,13 @@
     <div class="projects">
       <div class="project">
         <div class="project-head">
-          <h3>[Pricemonitor] Monitoração do Preços no Mercado Livre</h3>
-          <a href="https://pricemonitor-web.onrender.com/" target="_blank">Ver detalhes →</a>
+          <h3 data-i18n="proj1-h3">[Pricemonitor] Monitoração do Preços no Mercado Livre</h3>
+          <a href="https://pricemonitor-web.onrender.com/" target="_blank" data-i18n="proj-link">Ver detalhes →</a>
         </div>
         <div class="project-struct">
-          <div><span>Problema</span><p>Não há uma solução eficiente para monitorar os preços dos produtos no Mercado Livre de forma automática.</p></div>
-          <div><span>Decisão técnica</span><p>Como a API pública não atendia aos requisitos, foi adotado web scraping com Java e Spring Boot para coleta automatizada de preços, com foco em escalabilidade e manutenção.</p></div>
-          <div><span>Resultado</span><p>Automatização do monitoramento de preços, permitindo acompanhar variações dos produtos, criar histórico de valores e identificar oportunidades de compra de forma mais eficiente.</p></div>
+          <div><span data-i18n="lbl-problem">Problema</span><p data-i18n="proj1-problem">Não há uma solução eficiente para monitorar os preços dos produtos no Mercado Livre de forma automática.</p></div>
+          <div><span data-i18n="lbl-decision">Decisão técnica</span><p data-i18n="proj1-decision">Como a API pública não atendia aos requisitos, foi adotado web scraping com Java e Spring Boot para coleta automatizada de preços, com foco em escalabilidade e manutenção.</p></div>
+          <div><span data-i18n="lbl-result">Resultado</span><p data-i18n="proj1-result">Automatização do monitoramento de preços, permitindo acompanhar variações dos produtos, criar histórico de valores e identificar oportunidades de compra de forma mais eficiente.</p></div>
         </div>
         <div class="stack-row">
           <span class="tag mono">Java</span><span class="tag mono">Spring Boot</span><span class="tag mono">React + Vite</span><span class="tag mono">PostgreSQL</span>
@@ -329,13 +347,13 @@
 
       <div class="project">
         <div class="project-head">
-          <h3>[Barbershop APP] Integração entre sistemas corporativos</h3>
-          <a href="https://github.com/ph-melo/barbershop-api" target="_blank">Ver detalhes →</a>
+          <h3 data-i18n="proj2-h3">[Barbershop APP] Integração entre sistemas corporativos</h3>
+          <a href="https://github.com/ph-melo/barbershop-api" target="_blank" data-i18n="proj-link">Ver detalhes →</a>
         </div>
         <div class="project-struct">
-          <div><span>Problema</span><p>Alta demanda por agendamentos de serviços de barbearia, gerando a necessidade de uma solução mais eficiente para gerenciamento de horários.</p></div>
-          <div><span>Decisão técnica</span><p>Desenvolvimento de aplicativo mobile com Flutter e Go garantindo escalabilidade e desempenho.</p></div>
-          <div><span>Resultado</span><p>Automatização do processo de agendamento, permitindo maior organização da agenda, redução de conflitos de horários e melhor experiência para clientes e profissionais.</p></div>
+          <div><span data-i18n="lbl-problem">Problema</span><p data-i18n="proj2-problem">Alta demanda por agendamentos de serviços de barbearia, gerando a necessidade de uma solução mais eficiente para gerenciamento de horários.</p></div>
+          <div><span data-i18n="lbl-decision">Decisão técnica</span><p data-i18n="proj2-decision">Desenvolvimento de aplicativo mobile com Flutter e Go garantindo escalabilidade e desempenho.</p></div>
+          <div><span data-i18n="lbl-result">Resultado</span><p data-i18n="proj2-result">Automatização do processo de agendamento, permitindo maior organização da agenda, redução de conflitos de horários e melhor experiência para clientes e profissionais.</p></div>
         </div>
         <div class="stack-row">
           <span class="tag mono">Flutter</span><span class="tag mono">Go</span><span class="tag mono">Gin</span><span class="tag mono">JWT</span><span class="tag mono">PostgreSQL</span>
@@ -348,24 +366,24 @@
 <section id="skills">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-label mono">04 — Competências</div>
-      <div class="section-title">Stack técnica</div>
+      <div class="section-label mono" data-i18n="skills-label">04 — Competências</div>
+      <div class="section-title" data-i18n="skills-title">Stack técnica</div>
     </div>
     <div class="skills-grid">
       <div class="skill-cat">
-        <h4>Linguagens &amp; Frameworks</h4>
+        <h4 data-i18n="skills-cat1">Linguagens &amp; Frameworks</h4>
         <ul><li>Java</li><li>Spring Boot</li><li>Python</li></ul>
       </div>
       <div class="skill-cat">
-        <h4>Cloud &amp; Infra</h4>
+        <h4 data-i18n="skills-cat2">Cloud &amp; Infra</h4>
         <ul><li>AWS</li><li>Azure</li><li>Docker</li><li>Kubernetes</li><li>Terraform</li></ul>
       </div>
       <div class="skill-cat">
-        <h4>Dados &amp; Mensageria</h4>
+        <h4 data-i18n="skills-cat3">Dados &amp; Mensageria</h4>
         <ul><li>PostgreSQL</li><li>Oracle</li><li>Kafka</li></ul>
       </div>
       <div class="skill-cat">
-        <h4>Práticas &amp; CI/CD</h4>
+        <h4 data-i18n="skills-cat4">Práticas &amp; CI/CD</h4>
         <ul><li>APIs REST</li><li>Microsserviços</li><li>GitHub Actions</li><li>Azure DevOps</li></ul>
       </div>
     </div>
@@ -375,11 +393,11 @@
 <section id="education">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-label mono">05 — Formação</div>
-      <div class="section-title">Formação</div>
+      <div class="section-label mono" data-i18n="edu-label">05 — Formação</div>
+      <div class="section-title" data-i18n="edu-title">Formação</div>
     </div>
     <div class="edu-item">
-      <span class="name">[Sistemas de Informação / Universidade Paulista - UNIP]</span>
+      <span class="name" data-i18n="edu1-name">[Sistemas de Informação / Universidade Paulista - UNIP]</span>
       <span class="meta mono">[2023]</span>
     </div>
     <div class="edu-item">
@@ -392,9 +410,9 @@
 <section id="contact">
   <div class="wrap">
     <div class="section-head">
-      <div class="section-label mono">06 — Contato</div>
-      <div class="section-title">Vamos conversar</div>
-      <p class="lede">Vamos conversar sobre tecnologia, inovação e os desafios que movimentam o mundo do desenvolvimento.</p>
+      <div class="section-label mono" data-i18n="contact-label">06 — Contato</div>
+      <div class="section-title" data-i18n="contact-title">Vamos conversar</div>
+      <p class="lede" data-i18n="contact-lede">Vamos conversar sobre tecnologia, inovação e os desafios que movimentam o mundo do desenvolvimento.</p>
     </div>
     <div class="contact-links">
       <a href="mailto:paulohenriquemelocosta@gmail.com">paulohenriquemelocosta@gmail.com</a>
@@ -427,6 +445,130 @@
     toggle.addEventListener('click', function () {
       apply(theme === 'dark' ? 'light' : 'dark');
       localStorage.setItem('theme', theme);
+    });
+  })();
+</script>
+
+<script>
+  (function () {
+    var dict = {
+      'nav-about': { pt: 'Sobre', en: 'About' },
+      'nav-experience': { pt: 'Experiência', en: 'Experience' },
+      'nav-projects': { pt: 'Projetos', en: 'Projects' },
+      'nav-skills': { pt: 'Competências', en: 'Skills' },
+      'nav-contact-btn': { pt: 'Contato', en: 'Contact' },
+
+      'hero-eyebrow': { pt: 'Software Engineer • Java • Spring Boot', en: 'Software Engineer • Java • Spring Boot' },
+      'hero-role': { pt: 'Desenvolvedor Fullstack Sênior especializado em Java & Spring Boot, construindo sistemas de integração, automação e auditoria contínua para ambientes corporativos de grande porte.', en: 'Senior Fullstack Developer specialized in Java & Spring Boot, building integration, automation and continuous audit systems for large-scale corporate environments.' },
+      'hero-btn-talk': { pt: 'Falar comigo', en: 'Get in touch' },
+      'hero-btn-cv': { pt: 'Ver currículo (PDF)', en: 'View resume (PDF)' },
+      'stat1-b': { pt: '6+ anos', en: '6+ years' },
+      'stat1-s': { pt: 'de experiência em TI', en: 'of experience in IT' },
+      'stat2-b': { pt: '4 anos', en: '4 years' },
+      'stat2-s': { pt: 'na mesma empresa (Vivo)', en: 'at the same company (Vivo)' },
+      'stat3-s': { pt: 'stack principal', en: 'core stack' },
+      'stat4-s': { pt: 'cloud', en: 'cloud' },
+
+      'about-label': { pt: '01 — Sobre', en: '01 — About' },
+      'about-title': { pt: 'Perfil', en: 'Profile' },
+      'about-p1': { pt: 'Desenvolvedor Fullstack Sênior com experiência na construção de aplicações corporativas de alta disponibilidade, APIs REST, microsserviços e integrações entre sistemas.', en: 'Senior Fullstack Developer with experience building high-availability corporate applications, REST APIs, microservices and system integrations.' },
+      'about-p2': { pt: 'Atuo em projetos de automação de processos, auditoria contínua e análise de grandes volumes de dados, sempre priorizando arquitetura sólida, qualidade de código e observabilidade sobre soluções pontuais.', en: 'I work on process automation, continuous audit and large-scale data analysis projects, always prioritizing solid architecture, code quality and observability over one-off solutions.' },
+      'about-p3': { pt: 'Stack principal: Java, Spring Boot, PostgreSQL, Oracle, Kafka, Docker, Kubernetes, AWS e Azure — com prática recorrente em CI/CD via GitHub Actions e Azure DevOps, e infraestrutura como código com Terraform.', en: 'Core stack: Java, Spring Boot, PostgreSQL, Oracle, Kafka, Docker, Kubernetes, AWS and Azure — with regular practice in CI/CD via GitHub Actions and Azure DevOps, and infrastructure as code with Terraform.' },
+
+      'exp-label': { pt: '02 — Experiência', en: '02 — Experience' },
+      'exp-title': { pt: 'Trajetória profissional', en: 'Professional background' },
+
+      'job1-title': { pt: 'Desenvolvedor Sênior — Auditoria Contínua', en: 'Senior Developer — Continuous Audit' },
+      'job1-li1': { pt: 'Desenvolvimento de soluções para suportar auditorias corporativas via automação de processos e integração de sistemas.', en: 'Development of solutions to support corporate audits through process automation and system integration.' },
+      'job1-li2': { pt: 'Construção e manutenção de APIs REST e aplicações Java para automação de auditorias.', en: 'Building and maintaining REST APIs and Java applications for audit automation.' },
+      'job1-li3': { pt: 'Processamento e análise de grandes volumes de dados com Java e Python.', en: 'Processing and analysis of large data volumes with Java and Python.' },
+      'job1-li4': { pt: 'Integração entre aplicações usando Kafka e participação na definição de soluções técnicas para demandas estratégicas.', en: 'Application integration using Kafka and participation in defining technical solutions for strategic demands.' },
+
+      'job2-title': { pt: 'Desenvolvedor de Sistemas Pleno', en: 'Mid-Level Systems Developer' },
+      'job2-li1': { pt: 'Sustentação e evolução de aplicações corporativas usadas por múltiplas áreas de negócio.', en: 'Maintenance and evolution of corporate applications used by multiple business areas.' },
+      'job2-li2': { pt: 'Desenvolvimento de microsserviços e APIs REST, com atuação direta em ambientes críticos de produção.', en: 'Development of microservices and REST APIs, working directly in critical production environments.' },
+      'job2-li3': { pt: 'Participação em projetos de alta complexidade e integração entre sistemas corporativos.', en: 'Participation in high-complexity projects and corporate system integration.' },
+
+      'job3-title': { pt: 'Analista de Desenvolvimento de Sistemas Pleno', en: 'Mid-Level Systems Development Analyst' },
+      'job3-li1': { pt: 'Desenvolvimento, implementação e manutenção de automações de KPIs para a diretoria de contabilidade.', en: 'Development, implementation and maintenance of KPI automations for the accounting department.' },
+      'job3-li2': { pt: 'Trabalho direto com Python, Java, C# e JavaScript.', en: 'Direct work with Python, Java, C# and JavaScript.' },
+      'job3-li3': { pt: 'Participação na introdução de metodologias ágeis dentro da diretoria.', en: 'Participation in introducing agile methodologies within the department.' },
+
+      'job4-title': { pt: 'Analista de Sistemas SAP Pleno', en: 'Mid-Level SAP Systems Analyst' },
+      'job4-li1': { pt: 'Suporte a módulos SAP (WF, FI, SD) em tempo integral.', en: 'Full-time support for SAP modules (WF, FI, SD).' },
+      'job4-li2': { pt: 'Automação de processos manuais usando Python e ABAP, com integração XML via C#.', en: 'Automation of manual processes using Python and ABAP, with XML integration via C#.' },
+
+      'job5-title': { pt: 'Estágio TI', en: 'IT Internship' },
+      'job5-li1': { pt: 'Automações com Shell e Python para a equipe de contabilidade; integração entre SAP e Excel.', en: 'Shell and Python automations for the accounting team; integration between SAP and Excel.' },
+      'job5-li2': { pt: 'Suporte técnico, monitoramento de infraestrutura e gestão de firewall/VPN.', en: 'Technical support, infrastructure monitoring and firewall/VPN management.' },
+
+      'projects-label': { pt: '03 — Projetos', en: '03 — Projects' },
+      'projects-title': { pt: 'Projetos em destaque', en: 'Featured projects' },
+      'proj-link': { pt: 'Ver detalhes →', en: 'View details →' },
+      'lbl-problem': { pt: 'Problema', en: 'Problem' },
+      'lbl-decision': { pt: 'Decisão técnica', en: 'Technical decision' },
+      'lbl-result': { pt: 'Resultado', en: 'Result' },
+
+      'proj1-h3': { pt: '[Pricemonitor] Monitoração do Preços no Mercado Livre', en: '[Pricemonitor] Price Monitoring on Mercado Livre' },
+      'proj1-problem': { pt: 'Não há uma solução eficiente para monitorar os preços dos produtos no Mercado Livre de forma automática.', en: 'There was no efficient solution to automatically monitor product prices on Mercado Livre.' },
+      'proj1-decision': { pt: 'Como a API pública não atendia aos requisitos, foi adotado web scraping com Java e Spring Boot para coleta automatizada de preços, com foco em escalabilidade e manutenção.', en: 'Since the public API did not meet the requirements, web scraping with Java and Spring Boot was adopted for automated price collection, focused on scalability and maintainability.' },
+      'proj1-result': { pt: 'Automatização do monitoramento de preços, permitindo acompanhar variações dos produtos, criar histórico de valores e identificar oportunidades de compra de forma mais eficiente.', en: 'Automated price monitoring, enabling tracking of product variations, building a price history and identifying purchase opportunities more efficiently.' },
+
+      'proj2-h3': { pt: '[Barbershop APP] Integração entre sistemas corporativos', en: '[Barbershop APP] Corporate system integration' },
+      'proj2-problem': { pt: 'Alta demanda por agendamentos de serviços de barbearia, gerando a necessidade de uma solução mais eficiente para gerenciamento de horários.', en: 'High demand for barbershop service bookings, creating the need for a more efficient scheduling management solution.' },
+      'proj2-decision': { pt: 'Desenvolvimento de aplicativo mobile com Flutter e Go garantindo escalabilidade e desempenho.', en: 'Development of a mobile app with Flutter and Go, ensuring scalability and performance.' },
+      'proj2-result': { pt: 'Automatização do processo de agendamento, permitindo maior organização da agenda, redução de conflitos de horários e melhor experiência para clientes e profissionais.', en: 'Automated the booking process, allowing better schedule organization, fewer time conflicts and a better experience for clients and professionals.' },
+
+      'skills-label': { pt: '04 — Competências', en: '04 — Skills' },
+      'skills-title': { pt: 'Stack técnica', en: 'Technical stack' },
+      'skills-cat1': { pt: 'Linguagens & Frameworks', en: 'Languages & Frameworks' },
+      'skills-cat2': { pt: 'Cloud & Infra', en: 'Cloud & Infra' },
+      'skills-cat3': { pt: 'Dados & Mensageria', en: 'Data & Messaging' },
+      'skills-cat4': { pt: 'Práticas & CI/CD', en: 'Practices & CI/CD' },
+
+      'edu-label': { pt: '05 — Formação', en: '05 — Education' },
+      'edu-title': { pt: 'Formação', en: 'Education' },
+      'edu1-name': { pt: '[Sistemas de Informação / Universidade Paulista - UNIP]', en: '[Information Systems / Universidade Paulista - UNIP]' },
+
+      'contact-label': { pt: '06 — Contato', en: '06 — Contact' },
+      'contact-title': { pt: 'Vamos conversar', en: "Let's talk" },
+      'contact-lede': { pt: 'Vamos conversar sobre tecnologia, inovação e os desafios que movimentam o mundo do desenvolvimento.', en: "Let's talk about technology, innovation and the challenges driving the development world." }
+    };
+
+    var dictHtml = {
+      'projects-lede': {
+        pt: 'Confira alguns dos principais projetos e casos reais em que atuei. Para visualizar mais projetos desenvolvidos, <a href="https://github.com/ph-melo?tab=repositories" target="_blank" rel="noopener noreferrer">clique aqui</a>.',
+        en: 'Here are some of the main projects and real cases I have worked on. To see more projects, <a href="https://github.com/ph-melo?tab=repositories" target="_blank" rel="noopener noreferrer">click here</a>.'
+      }
+    };
+
+    var html = document.documentElement;
+    var langToggle = document.getElementById('lang-toggle');
+    var langOptions = langToggle.querySelectorAll('.lang-option');
+    var storedLang = localStorage.getItem('lang');
+    var lang = storedLang || 'pt';
+
+    function applyLang(l) {
+      document.querySelectorAll('[data-i18n]').forEach(function (el) {
+        var entry = dict[el.getAttribute('data-i18n')];
+        if (entry) el.textContent = entry[l];
+      });
+      document.querySelectorAll('[data-i18n-html]').forEach(function (el) {
+        var entry = dictHtml[el.getAttribute('data-i18n-html')];
+        if (entry) el.innerHTML = entry[l];
+      });
+      langOptions.forEach(function (opt) {
+        opt.classList.toggle('active', opt.getAttribute('data-lang') === l);
+      });
+      html.setAttribute('lang', l === 'en' ? 'en' : 'pt-br');
+      lang = l;
+    }
+
+    applyLang(lang);
+
+    langToggle.addEventListener('click', function () {
+      applyLang(lang === 'pt' ? 'en' : 'pt');
+      localStorage.setItem('lang', lang);
     });
   })();
 </script>
